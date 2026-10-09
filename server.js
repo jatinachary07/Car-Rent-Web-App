@@ -6,12 +6,20 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
+
+const APP_DIR = fs.existsSync(path.join(__dirname, 'public'))
+  ? __dirname
+  : fs.existsSync(path.join(__dirname, '..', 'public'))
+    ? path.dirname(__dirname)
+    : __dirname;
+
 const SECRET = process.env.SECRET || 'drivego-super-secret-key-2026';
-const DATA_DIR = path.join(__dirname, 'data');
+
+const DATA_DIR = path.join(APP_DIR, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 const SEED_FILE = path.join(DATA_DIR, 'seed-cars.json');
-const PUBLIC_DIR = path.join(__dirname, 'public');
+const PUBLIC_DIR = path.join(APP_DIR, 'public');
 
 /* ---------- INITIAL DATA & DB LAYER ---------- */
 const LOCATIONS = [
