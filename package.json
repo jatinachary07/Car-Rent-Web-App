@@ -1,0 +1,12 @@
+{
+  "name": "drivego-car-rental",
+  "version": "1.0.0",
+  "description": "DriveGo - a car rental web app (Tailwind + vanilla JS + zero-dependency Node backend)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

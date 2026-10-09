@@ -1,0 +1,612 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "name": "Swift ZXi+ Dual Tone",
+      "brand": "Maruti Suzuki",
+      "type": "Hatchback",
+      "seats": 5,
+      "transmission": "Manual",
+      "fuel": "Petrol",
+      "pricePerDay": 1800,
+      "rating": 4.6,
+      "reviewsCount": 142,
+      "hue": 0,
+      "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "22.5 km/l",
+      "acceleration": "11.2s (0-100)",
+      "topSpeed": "165 km/h",
+      "luggage": "2 Large Bags",
+      "year": 2024,
+      "badge": "Best Fuel Economy",
+      "description": "Zippy, efficient, and easy to park in busy urban centers. The Swift ZXi+ offers crisp handling, Android Auto & Apple CarPlay, and exceptional mileage.",
+      "features": [
+        "7-inch SmartPlay Touchscreen",
+        "Cruise Control",
+        "Automatic Climate Control",
+        "LED Projector Headlamps",
+        "Rear Parking Sensors",
+        "Push Button Start",
+        "Dual Airbags"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "i20 Asta Turbo",
+      "brand": "Hyundai",
+      "type": "Hatchback",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 2400,
+      "rating": 4.7,
+      "reviewsCount": 98,
+      "hue": 210,
+      "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "20.2 km/l",
+      "acceleration": "9.8s (0-100)",
+      "topSpeed": "175 km/h",
+      "luggage": "3 Bags",
+      "year": 2024,
+      "badge": "Popular City Ride",
+      "description": "Sporty hot hatchback with turbocharged punch, premium digital cluster, electric sunroof, and refined 7-speed dual-clutch transmission.",
+      "features": [
+        "Electric Sunroof",
+        "10.25-inch HD Screen",
+        "Bose 7-Speaker Audio",
+        "Wireless Phone Charger",
+        "Rear Camera with Dynamic Guidelines",
+        "Hill Assist",
+        "Air Purifier"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "City ZX i-VTEC",
+      "brand": "Honda",
+      "type": "Sedan",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 3400,
+      "rating": 4.8,
+      "reviewsCount": 185,
+      "hue": 220,
+      "image": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "18.4 km/l",
+      "acceleration": "9.1s (0-100)",
+      "topSpeed": "190 km/h",
+      "luggage": "4 Bags (506L Boot)",
+      "year": 2024,
+      "badge": "Executive Choice",
+      "description": "The quintessential executive sedan. Renowned rear-seat comfort, plush perforated leather, ADAS Honda Sensing safety suite, and effortless CVT transmission.",
+      "features": [
+        "Honda Sensing ADAS",
+        "LaneWatch Camera",
+        "One-Touch Electric Sunroof",
+        "Plush Leather Upholstery",
+        "8-Speaker Premium Sound",
+        "Remote Engine Start",
+        "6 Airbags"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Verna SX(O) Turbo",
+      "brand": "Hyundai",
+      "type": "Sedan",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 3600,
+      "rating": 4.7,
+      "reviewsCount": 114,
+      "hue": 260,
+      "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "19.0 km/l",
+      "acceleration": "8.1s (0-100)",
+      "topSpeed": "205 km/h",
+      "luggage": "4 Bags (528L Boot)",
+      "year": 2024,
+      "badge": "High Performance",
+      "description": "Futuristic fastback styling paired with a potent 160 HP 1.5L Turbo engine. Ventilated front seats and dual seamless 10.25-inch curved screens.",
+      "features": [
+        "Heated & Ventilated Seats",
+        "Level 2 ADAS",
+        "Bose 8-Speaker Sound",
+        "Ambient Lighting 64 Colors",
+        "Paddle Shifters",
+        "Electronic Parking Brake",
+        "Smart Trunk"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Creta SX(O) Knight Edition",
+      "brand": "Hyundai",
+      "type": "SUV",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "pricePerDay": 4400,
+      "rating": 4.9,
+      "reviewsCount": 230,
+      "hue": 190,
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "19.5 km/l",
+      "acceleration": "9.5s (0-100)",
+      "topSpeed": "185 km/h",
+      "luggage": "4 Bags",
+      "year": 2024,
+      "badge": "Top Rated SUV",
+      "description": "India's undisputed favourite SUV. Panoramic sunroof, 360-degree blind spot monitors, punchy diesel torque, and commanding road presence.",
+      "features": [
+        "Voice Panoramic Sunroof",
+        "360-Degree Surround Camera",
+        "Bose Audio Suite",
+        "Traction Control Modes",
+        "Drive Modes (Eco/Comfort/Sport)",
+        "Ventilated Front Seats",
+        "Wireless Charging"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Thar LX 4x4 Hard Top",
+      "brand": "Mahindra",
+      "type": "SUV",
+      "seats": 4,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "pricePerDay": 4800,
+      "rating": 4.8,
+      "reviewsCount": 310,
+      "hue": 30,
+      "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "15.2 km/l",
+      "acceleration": "10.2s (0-100)",
+      "topSpeed": "160 km/h",
+      "luggage": "2 Bags",
+      "year": 2024,
+      "badge": "Ultimate 4x4",
+      "description": "Ready for hills, beaches, and rugged trails. Shift-on-the-fly 4WD transfer case, high ground clearance, roll cage safety, and iconic design.",
+      "features": [
+        "True 4x4 with Low Ratio",
+        "Electric Driveline Disconnect",
+        "Adventure Telematics Screen",
+        "Washable Interior with Drains",
+        "Roll Cage Certified",
+        "Roof-Mounted Speakers",
+        "All-Terrain Tyres"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Fortuner Legender 4x4",
+      "brand": "Toyota",
+      "type": "SUV",
+      "seats": 7,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "pricePerDay": 8500,
+      "rating": 4.9,
+      "reviewsCount": 178,
+      "hue": 240,
+      "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "14.4 km/l",
+      "acceleration": "9.6s (0-100)",
+      "topSpeed": "190 km/h",
+      "luggage": "5 Bags",
+      "year": 2024,
+      "badge": "VIP Road Presence",
+      "description": "The king of highway cruising and off-road dominance. 500 Nm torque monster with dual-tone catamaran styling, 7 luxurious seats, and JBL audio.",
+      "features": [
+        "Catamaran Style Aerodynamic Body",
+        "11-Speaker JBL Audio",
+        "Hands-Free Kick Sensor Tailgate",
+        "Wireless Phone Charging Pad",
+        "Auto Limited Slip Differential",
+        "Dual Zone Auto AC",
+        "Ventilated Front Seats"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Innova Crysta ZX Luxury",
+      "brand": "Toyota",
+      "type": "MPV",
+      "seats": 7,
+      "transmission": "Manual",
+      "fuel": "Diesel",
+      "pricePerDay": 5200,
+      "rating": 4.9,
+      "reviewsCount": 265,
+      "hue": 40,
+      "image": "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "15.6 km/l",
+      "acceleration": "11.5s (0-100)",
+      "topSpeed": "170 km/h",
+      "luggage": "5 Bags",
+      "year": 2024,
+      "badge": "Family Comfort",
+      "description": "The benchmark for long-distance family road trips. Middle-row plush captain chairs with armrests, dedicated rear AC vents, and legendary reliability.",
+      "features": [
+        "Captain Seats with Armrests",
+        "Ambient Roof Illumination",
+        "Smart Entry & Push Start",
+        "7 SRS Airbags",
+        "Rear Camera & Sensors",
+        "Foldable Seatback Tables",
+        "Eco & Power Drive Modes"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Tesla Model 3 Long Range",
+      "brand": "Tesla",
+      "type": "Electric",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Electric",
+      "pricePerDay": 9500,
+      "rating": 4.9,
+      "reviewsCount": 160,
+      "hue": 175,
+      "image": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "629 km Range",
+      "acceleration": "4.2s (0-100)",
+      "topSpeed": "233 km/h",
+      "luggage": "4 Bags + Frunk",
+      "year": 2024,
+      "badge": "100% Electric Eco",
+      "description": "Supercar-beating electric acceleration, all-glass acoustic roof, 15.4-inch central touchscreen, Autopilot driver assistance, and zero tailpipe emissions.",
+      "features": [
+        "Autopilot Highway Assist",
+        "All-Glass Acoustic Panoramic Roof",
+        "15.4-inch Touchscreen Command",
+        "Dual Motor All-Wheel Drive",
+        "Supercharging Support (250kW)",
+        "Heated Seats Throughout",
+        "Premium 17-Speaker Audio"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "BMW M340i xDrive",
+      "brand": "BMW",
+      "type": "Luxury",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 13500,
+      "rating": 5,
+      "reviewsCount": 140,
+      "hue": 230,
+      "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "13.0 km/l",
+      "acceleration": "4.4s (0-100)",
+      "topSpeed": "250 km/h",
+      "luggage": "3 Bags",
+      "year": 2024,
+      "badge": "Ultimate Driving Machine",
+      "description": "Pure adrenaline. 3.0-litre straight-six turbo pumping 382 horsepower, rear-biased xDrive all-wheel drive, M Sport differential, and intoxicating exhaust note.",
+      "features": [
+        "382 HP Inline-6 TwinPower Turbo",
+        "Harman Kardon Surround Sound",
+        "BMW Curved Display (OS 8)",
+        "M Sport Brakes & Suspension",
+        "Head-Up Display",
+        "Wireless Apple CarPlay",
+        "Launch Control"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Mercedes-Benz C300 AMG Line",
+      "brand": "Mercedes-Benz",
+      "type": "Luxury",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 14500,
+      "rating": 4.9,
+      "reviewsCount": 192,
+      "hue": 280,
+      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "14.2 km/l",
+      "acceleration": "5.7s (0-100)",
+      "topSpeed": "250 km/h",
+      "luggage": "3 Bags",
+      "year": 2024,
+      "badge": "Pure Elegance",
+      "description": "Baby S-Class opulence. 11.9-inch portrait MBUX touchscreen, Burmester 3D Surround Sound, 64-color ambient cabin illumination, and silky 9G-TRONIC transmission.",
+      "features": [
+        "MBUX 2nd Gen with Voice Assistant",
+        "Burmester 3D Surround Audio",
+        "AMG Body Styling & 18\" Alloys",
+        "Panoramic Sliding Glass Sunroof",
+        "Active Brake Assist",
+        "Memory Package Seats",
+        "Fingerprint Biometric Scanner"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Audi A6 45 TFSI Technology",
+      "brand": "Audi",
+      "type": "Luxury",
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "pricePerDay": 13000,
+      "rating": 4.8,
+      "reviewsCount": 88,
+      "hue": 210,
+      "image": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80"
+      ],
+      "mileage": "14.1 km/l",
+      "acceleration": "6.8s (0-100)",
+      "topSpeed": "250 km/h",
+      "luggage": "4 Bags",
+      "year": 2024,
+      "badge": "Prestige Sedan",
+      "description": "Progressive technology meets whisper-quiet luxury. Audi Virtual Cockpit Plus, Matrix LED headlights with dynamic turn signals, and four-zone climate control.",
+      "features": [
+        "Audi Virtual Cockpit Plus",
+        "Dual MMI Touch Response Displays",
+        "Matrix LED Headlamps",
+        "Bang & Olufsen 16-Speaker System",
+        "Wireless Phone Charging",
+        "Audi Pre Sense Basic",
+        "Customizable Ambient Contour Lighting"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "email": "customer@drivego.com",
+      "phone": "+91 98765 43210",
+      "licenseNumber": "DL-04202300892",
+      "role": "user",
+      "password": "e961b982f691604db8a81cd9ab195ab7:e75e9683d2ea5811339b2310aaec43760690f1a5e012add6aa54272baf3020a2e98ffdda808751710d0f237efb8025f388403e9762222ad93b7970f7d87bcb8b",
+      "createdAt": "2026-10-09T17:11:32.478Z"
+    },
+    {
+      "id": 2,
+      "name": "Fleet Administrator",
+      "email": "admin@drivego.com",
+      "phone": "+91 98888 77777",
+      "licenseNumber": "DL-ADMIN-01",
+      "role": "admin",
+      "password": "7839e5a30fef50c8d163cfc07eff2f3b:895feaed3fb5888dd02941a50c50a50123c036ca2327b2fac7e9a3b772452e8ff651078e8369bf605cdede642d9677786b66e48b34adb27816eb9a93555f7d6c",
+      "createdAt": "2026-10-09T17:11:32.545Z"
+    },
+    {
+      "id": 101,
+      "name": "Momo",
+      "email": "momo@napal.com",
+      "phone": "+91 98765 00000",
+      "licenseNumber": "DL-VERIFIED-PASS",
+      "role": "user",
+      "password": "ff0a0002db9a42e516ba773a9a113c3b:42270db887ed9bd61f6c9b54a9f89fe0c32f4dd3502bd345f719ca2b7c5cbb77e8865f66db7ade59e709623dae83570b800b4c3e8a13d274eea0c87e8df344ce",
+      "createdAt": "2026-10-09T17:33:11.730Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "ref": "DG-7A39B",
+      "userId": 1,
+      "userName": "Alex Johnson",
+      "carId": 5,
+      "carName": "Hyundai Creta SX(O) Knight Edition",
+      "start": "2026-10-15",
+      "end": "2026-10-18",
+      "pickupTime": "10:00 AM",
+      "returnTime": "10:00 AM",
+      "pickupLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "returnLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "days": 3,
+      "extras": [
+        "insurance",
+        "gps"
+      ],
+      "promoCode": "DRIVE20",
+      "base": 13200,
+      "extrasTotal": 1350,
+      "durationDiscount": 0,
+      "promoDiscount": 2910,
+      "tax": 2095,
+      "deposit": 3000,
+      "total": 13735,
+      "status": "confirmed",
+      "paymentMethod": "Credit Card (•••• 4242)",
+      "createdAt": "2026-10-08T14:20:00.000Z"
+    },
+    {
+      "id": 100,
+      "ref": "DG-BBD441",
+      "userId": 1,
+      "userName": "Alex Johnson",
+      "carId": 1,
+      "carName": "Maruti Suzuki Swift ZXi+ Dual Tone",
+      "carImage": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+      "start": "2026-11-10",
+      "end": "2026-11-13",
+      "pickupTime": "10:00 AM",
+      "returnTime": "10:00 AM",
+      "pickupLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "returnLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "days": 3,
+      "extras": [
+        "insurance"
+      ],
+      "promoCode": "DRIVE20",
+      "base": 5400,
+      "extrasTotal": 900,
+      "durationDiscount": 0,
+      "promoDiscount": 1260,
+      "tax": 907,
+      "deposit": 3000,
+      "total": 8947,
+      "status": "confirmed",
+      "paymentMethod": "Credit Card (•••• 4242)",
+      "driverName": "Alex Johnson",
+      "driverPhone": "+91 98765 43210",
+      "createdAt": "2026-10-09T17:28:48.145Z"
+    },
+    {
+      "id": 102,
+      "ref": "DG-1B5998",
+      "userId": 101,
+      "userName": "Momo",
+      "carId": 1,
+      "carName": "Maruti Suzuki Swift ZXi+ Dual Tone",
+      "carImage": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80",
+      "start": "2026-10-10",
+      "end": "2026-10-13",
+      "pickupTime": "10:00 AM",
+      "returnTime": "10:00 AM",
+      "pickupLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "returnLocation": "Indira Gandhi Int. Airport (Terminal 3)",
+      "days": 3,
+      "extras": [
+        "insurance"
+      ],
+      "promoCode": null,
+      "base": 5400,
+      "extrasTotal": 900,
+      "durationDiscount": 0,
+      "promoDiscount": 0,
+      "tax": 1134,
+      "deposit": 3000,
+      "total": 10434,
+      "status": "confirmed",
+      "paymentMethod": "Credit Card (•••• 4242)",
+      "driverName": "Momo",
+      "driverPhone": "+91 98765 43210",
+      "createdAt": "2026-10-09T17:33:57.825Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "carId": 10,
+      "author": "Vikram Malhotra",
+      "rating": 5,
+      "date": "2026-09-18",
+      "comment": "The BMW M340i was in pristine showroom condition! Effortless acceleration and smooth pickup at Airport T3."
+    },
+    {
+      "id": 2,
+      "carId": 10,
+      "author": "Pooja Hegde",
+      "rating": 5,
+      "date": "2026-08-25",
+      "comment": "Outstanding service. The exhaust sound and handling on the expressway were breathtaking."
+    },
+    {
+      "id": 3,
+      "carId": 5,
+      "author": "Rahul Sharma",
+      "rating": 5,
+      "date": "2026-09-02",
+      "comment": "Creta Knight Edition was super comfortable for our family trip to Agra. Panoramic sunroof made the drive awesome!"
+    },
+    {
+      "id": 4,
+      "carId": 6,
+      "author": "Aman Preet",
+      "rating": 5,
+      "date": "2026-09-14",
+      "comment": "Thar 4x4 handled rough trails with zero trouble. Bluetooth, AC, and build quality were top notch."
+    },
+    {
+      "id": 5,
+      "carId": 9,
+      "author": "Dr. Ananya Roy",
+      "rating": 5,
+      "date": "2026-09-20",
+      "comment": "Tesla Model 3 Autopilot is magic. Super quiet, extremely quick, and cost practically nothing to charge."
+    },
+    {
+      "id": 6,
+      "carId": 3,
+      "author": "Karan Johar",
+      "rating": 4,
+      "date": "2026-08-30",
+      "comment": "Honda City had huge legroom in the rear and great luggage space. Very clean interior."
+    }
+  ],
+  "coupons": {
+    "DRIVE20": {
+      "type": "percent",
+      "value": 20,
+      "maxDiscount": 3500,
+      "desc": "20% off up to ₹3,500"
+    },
+    "FIRST10": {
+      "type": "percent",
+      "value": 10,
+      "maxDiscount": 2000,
+      "desc": "10% off your first drive"
+    },
+    "WEEKEND15": {
+      "type": "percent",
+      "value": 15,
+      "maxDiscount": 2500,
+      "desc": "15% weekend special discount"
+    },
+    "VIP500": {
+      "type": "flat",
+      "value": 500,
+      "maxDiscount": 500,
+      "desc": "Flat ₹500 discount"
+    }
+  },
+  "nextId": 103
+}

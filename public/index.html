@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DriveGo – Premium Luxury & Self-Drive Car Rental</title>
+  <meta name="description" content="Rent premium sedans, 4x4 SUVs, electric vehicles, and sports cars. Transparent pricing, instant digital pickup, zero security deposit options, and 24/7 roadside assistance." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.25s ease-out forwards',
+            'slide-up': 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.88);
+    }
+    .dark .glass {
+      background: rgba(15, 23, 42, 0.85);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.3) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 15%, rgba(236, 72, 153, 0.25) 0%, transparent 40%),
+                  radial-gradient(circle at 50% 85%, rgba(14, 165, 233, 0.25) 0%, transparent 50%),
+                  #090d16;
+    }
+    .card-zoom:hover img {
+      transform: scale(1.05);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #voucherPrintArea, #voucherPrintArea * {
+        visibility: visible !important;
+      }
+      #voucherPrintArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+
+  <!-- TOP PROMO TICKER -->
+  <aside aria-label="Special Offers" class="bg-gradient-to-r from-brand-600 via-indigo-600 to-pink-600 text-white text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span>🔥 Exclusive Offer: Use code <strong class="bg-white/20 px-2 py-0.5 rounded text-white font-mono tracking-wider cursor-pointer hover:bg-white/30 transition" onclick="copyPromo('DRIVE20')">DRIVE20</strong> for 20% off • Zero Security Deposit Available!</span>
+  </aside>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="glass sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-500 via-indigo-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-2xl font-extrabold tracking-tight">Drive<span class="text-brand-600 dark:text-brand-400">Go</span></span>
+          <span class="text-[10px] block uppercase font-bold tracking-widest text-slate-400 -mt-1">Premium Mobility</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#fleet" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Our Fleet</a>
+        <a href="#calculator" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Price Estimator</a>
+        <a href="#perks" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Why Us</a>
+        <a href="#reviews" class="hover:text-brand-600 dark:hover:text-brand-400 transition">Testimonials</a>
+        <a href="#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition">FAQs</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Toggle theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Admin Portal Button -->
+        <button id="adminBtn" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold border border-amber-500/30 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 transition">
+          <span>⚡ Admin Portal</span>
+        </button>
+
+        <!-- My Bookings Button -->
+        <button id="myBookingsBtn" class="hidden items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 hover:border-brand-500 text-slate-700 dark:text-slate-200 transition">
+          <span>📦 My Trips</span>
+          <span id="bookingCountBadge" class="hidden px-1.5 py-0.2 rounded-full bg-brand-600 text-white text-[10px]">0</span>
+        </button>
+
+        <!-- Auth Button -->
+        <div id="authContainer" class="flex items-center gap-2">
+          <button id="loginBtn" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/20 transition">
+            Sign In
+          </button>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 px-4 py-4 space-y-3 bg-white/95 dark:bg-slate-900/95">
+      <a href="#fleet" class="block py-2 text-sm font-medium hover:text-brand-600">Our Fleet</a>
+      <a href="#calculator" class="block py-2 text-sm font-medium hover:text-brand-600">Price Estimator</a>
+      <a href="#perks" class="block py-2 text-sm font-medium hover:text-brand-600">Why Us</a>
+      <a href="#reviews" class="block py-2 text-sm font-medium hover:text-brand-600">Testimonials</a>
+      <a href="#faq" class="block py-2 text-sm font-medium hover:text-brand-600">FAQs</a>
+      <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex gap-2">
+        <button id="mobileAdminBtn" class="flex-1 py-2 rounded-lg text-xs font-bold border border-amber-500/30 text-amber-500">Admin</button>
+        <button id="mobileBookingsBtn" class="flex-1 py-2 rounded-lg text-xs font-bold border border-slate-300 dark:border-slate-700">My Trips</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative hero-glow text-white overflow-hidden py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Headline & Pitch -->
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold uppercase tracking-wider text-indigo-200 mb-6 animate-pulse-slow">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Sanitized Luxury Fleet • Free Cancellation up to 24h
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.15]">
+          Drive Your Ambition. <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-pink-300 to-amber-200">
+            Premium Car Rentals Redefined
+          </span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+          From track-tuned BMW M-Sport sedans to unstoppable Thar 4x4 off-roaders and long-range electric vehicles. Transparent pricing, instant airport pickup, and zero hidden fees.
+        </p>
+      </div>
+
+      <!-- SEARCH & TRIP PLANNER BAR -->
+      <div class="mt-12 max-w-5xl mx-auto">
+        <form id="searchBarForm" class="glass !bg-white/95 dark:!bg-slate-900/90 text-slate-900 dark:text-slate-100 p-4 sm:p-6 rounded-3xl shadow-2xl border border-white/20 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+          
+          <!-- Pickup Location -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📍 Pickup Location</span>
+            </label>
+            <select id="hubSelect" class="w-full h-11 px-3.5 text-xs font-medium rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              <!-- Populated from API -->
+            </select>
+          </div>
+
+          <!-- Pickup Date -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>📅 Pickup Date</span>
+            </label>
+            <input type="date" id="heroStartDate" class="w-full h-11 px-3 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none" required />
+          </div>
+
+          <!-- Return Date -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>🏁 Return Date</span>
+            </label>
+            <input type="date" id="heroEndDate" class="w-full h-11 px-3 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none" required />
+          </div>
+
+          <!-- Quick Category -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <span>🚘 Vehicle Class</span>
+            </label>
+            <select id="heroCategorySelect" class="w-full h-11 px-3 text-xs font-medium rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              <option value="All">All Categories</option>
+              <option value="Luxury">Luxury &amp; Sports</option>
+              <option value="SUV">SUVs &amp; 4x4s</option>
+              <option value="Sedan">Executive Sedans</option>
+              <option value="Electric">Electric Vehicles (EV)</option>
+              <option value="Hatchback">City Hatchbacks</option>
+              <option value="MPV">Family MPVs (7-Seater)</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="w-full h-11 px-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-pink-600 hover:from-brand-500 hover:to-pink-500 text-white font-bold text-xs shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 transition hover:-translate-y-0.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <span>Search Cars</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Trust Stat Strip -->
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <p class="text-2xl sm:text-3xl font-extrabold text-white">500+</p>
+          <p class="text-xs text-slate-400 font-medium">Inspected Fleet</p>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <p class="text-2xl sm:text-3xl font-extrabold text-amber-300">4.9 ★</p>
+          <p class="text-xs text-slate-400 font-medium">15,000+ Journeys</p>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <p class="text-2xl sm:text-3xl font-extrabold text-emerald-400">₹0</p>
+          <p class="text-xs text-slate-400 font-medium">Zero Deposit Option</p>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <p class="text-2xl sm:text-3xl font-extrabold text-cyan-300">24/7</p>
+          <p class="text-xs text-slate-400 font-medium">Roadside Support</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLEET SHOWCASE SECTION -->
+  <main id="fleet" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">
+          <span>✨ Curated Selection</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Browse Fleet by Category</h2>
+        <p id="fleetCountText" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Explore luxury rentals, family MPVs, and eco-smart EVs</p>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="relative w-full md:w-72">
+        <input type="text" id="searchInput" placeholder="Search BMW, Fortuner, Thar..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none shadow-sm" />
+        <span class="absolute left-3.5 top-2.5 text-slate-400 text-xs">🔍</span>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div id="categoryTabs" class="flex gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
+      <!-- Generated dynamically -->
+    </div>
+
+    <!-- Filter Control Bar -->
+    <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm mb-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 items-center">
+      <div>
+        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Transmission</label>
+        <select id="filterTrans" class="w-full py-2 px-2.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+          <option value="">All Transmissions</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Fuel Type</label>
+        <select id="filterFuel" class="w-full py-2 px-2.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+          <option value="">All Fuel Types</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Electric">Electric (EV)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Seats</label>
+        <select id="filterSeats" class="w-full py-2 px-2.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+          <option value="">Any Capacity</option>
+          <option value="4">4+ Seats</option>
+          <option value="5">5+ Seats</option>
+          <option value="7">7+ Seats</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Sort By</label>
+        <select id="filterSort" class="w-full py-2 px-2.5 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+          <option value="">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated (★)</option>
+          <option value="popular">Most Popular</option>
+        </select>
+      </div>
+
+      <!-- Price Range Slider -->
+      <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-[11px] font-bold uppercase text-slate-400">Max Budget / Day</span>
+          <span id="priceDisplayLabel" class="text-xs font-extrabold text-brand-600 dark:text-brand-400">₹25,000</span>
+        </div>
+        <input type="range" id="filterPriceRange" min="1500" max="25000" step="500" value="25000" class="w-full accent-brand-600 cursor-pointer" />
+      </div>
+    </div>
+
+    <!-- CARS GRID -->
+    <div id="carsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty Results State -->
+    <div id="emptyFleetState" class="hidden text-center py-20 px-4">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-brand-50 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800 flex items-center justify-center text-3xl mb-4">
+        🔍
+      </div>
+      <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">No vehicles match your active filters</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-sm mx-auto">Try widening your price range, clearing specific filters, or selecting another category.</p>
+      <button id="resetFiltersBtn" class="mt-5 px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-600 text-white hover:bg-brand-700 transition">
+        Reset All Filters
+      </button>
+    </div>
+  </main>
+
+  <!-- SMART PRICE ESTIMATOR CALCULATOR -->
+  <section id="calculator" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold tracking-tight">Transparent Price Estimator</h2>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">No surprises at checkout. Long-duration rentals of 7+ days automatically unlock an extra 10% discount!</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-xl grid md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-500 mb-1.5">Select Vehicle</label>
+            <select id="calcCarSelect" class="w-full py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold">
+              <!-- Populated via JS -->
+            </select>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="text-xs font-bold uppercase text-slate-500">Duration</label>
+              <span id="calcDaysDisplay" class="text-sm font-extrabold text-brand-600 dark:text-brand-400">3 Days</span>
+            </div>
+            <input type="range" id="calcDaysRange" min="1" max="30" value="3" class="w-full accent-brand-600 cursor-pointer" />
+            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+              <span>1 Day</span>
+              <span>7 Days (10% OFF)</span>
+              <span>30 Days</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-500 mb-1.5">Optional Add-ons</label>
+            <div class="space-y-2">
+              <label class="flex items-center gap-2.5 text-xs cursor-pointer">
+                <input type="checkbox" id="calcInsurance" checked class="accent-brand-600 w-4 h-4 rounded" />
+                <span>Zero-Liability Full Cover (+₹300/day)</span>
+              </label>
+              <label class="flex items-center gap-2.5 text-xs cursor-pointer">
+                <input type="checkbox" id="calcDriver" class="accent-brand-600 w-4 h-4 rounded" />
+                <span>Professional Chauffeur (+₹1,000/day)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 text-xs">
+            <span class="text-slate-500">Base Daily Rental</span>
+            <span id="calcBasePrice" class="font-bold">₹0</span>
+          </div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 text-xs">
+            <span class="text-slate-500">Add-ons Total</span>
+            <span id="calcAddonsPrice" class="font-bold">₹0</span>
+          </div>
+          <div id="calcDiscountRow" class="hidden items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 text-emerald-600 text-xs">
+            <span>Duration Discount (10%)</span>
+            <span id="calcDiscountPrice" class="font-bold">-₹0</span>
+          </div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 text-xs">
+            <span class="text-slate-500">GST (18%)</span>
+            <span id="calcGstPrice" class="font-bold">₹0</span>
+          </div>
+          <div class="pt-2 flex items-center justify-between text-base font-extrabold text-brand-600 dark:text-brand-400">
+            <span>Estimated Total</span>
+            <span id="calcTotalPrice" class="text-2xl">₹0</span>
+          </div>
+          <p class="text-[10px] text-slate-400 text-center pt-2">Includes standard 150 km/day allowance &amp; 24/7 roadside assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US PERKS -->
+  <section id="perks" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">
+        <span>⭐ DriveGo Standard</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">The Self-Drive Experience You Deserve</h2>
+      <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Zero friction, zero stress. Everything you need to enjoy the open road with complete peace of mind.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 text-brand-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+          🛡️
+        </div>
+        <h3 class="text-base font-bold mb-2">Zero Security Deposit</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">No hefty funds blocked on your credit card. Drive freely without deposit lockups.</p>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-950/40 text-pink-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+          🧼
+        </div>
+        <h3 class="text-base font-bold mb-2">Sanitized &amp; Inspected</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Each vehicle undergoes a 45-point mechanical inspection and complete sterilization before handover.</p>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+          ⚡
+        </div>
+        <h3 class="text-base font-bold mb-2">Instant Terminal Handover</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Swift 3-minute key collection right outside airport arrival terminals and city railway hubs.</p>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+          🛟
+        </div>
+        <h3 class="text-base font-bold mb-2">24/7 Roadside Rescue</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Nationwide towing, battery jumpstarts, flat tire replacement, and immediate loaner car support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER TESTIMONIALS -->
+  <section id="reviews" class="py-16 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">
+            <span>💬 Verified Testimonials</span>
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight">What Drivers Say About DriveGo</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Real feedback from verified renters across India.</p>
+        </div>
+
+        <button id="openReviewModalBtn" class="self-start md:self-auto px-4 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-brand-500 shadow-sm transition">
+          ✍️ Post a Review
+        </button>
+      </div>
+
+      <div id="reviewsListGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
+      <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Everything you need to know regarding licenses, deposits, and policies.</p>
+    </div>
+
+    <div class="space-y-4" id="faqAccordion">
+      <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <button class="faq-toggle w-full px-6 py-4.5 text-left font-bold text-sm sm:text-base flex justify-between items-center">
+          <span>What documents are required to book a self-drive car?</span>
+          <span class="faq-icon text-lg text-brand-600 font-mono transition-transform">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
+          You only need: (1) A valid Indian Driving License (or International Driving Permit for overseas guests), (2) An official government photo ID (Aadhaar, Passport, or Voter ID), and (3) Minimum age of 21 years (25 years for Luxury fleet).
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <button class="faq-toggle w-full px-6 py-4.5 text-left font-bold text-sm sm:text-base flex justify-between items-center">
+          <span>What is the fuel &amp; charging policy?</span>
+          <span class="faq-icon text-lg text-brand-600 font-mono transition-transform">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
+          We operate on a transparent <strong>Same-to-Same</strong> fuel policy. Vehicles are handed over with full tanks and returned with full tanks. Electric vehicles are dispatched at 85%+ battery charge and can be returned with 20%+ charge.
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <button class="faq-toggle w-full px-6 py-4.5 text-left font-bold text-sm sm:text-base flex justify-between items-center">
+          <span>What if the car breaks down or has a puncture?</span>
+          <span class="faq-icon text-lg text-brand-600 font-mono transition-transform">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
+          Every DriveGo trip includes 24/7 Roadside Assistance. In case of any mechanical issue, tire puncture, or towing requirement, our dedicated highway response team reaches your location within 35 minutes across all national highways.
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <button class="faq-toggle w-full px-6 py-4.5 text-left font-bold text-sm sm:text-base flex justify-between items-center">
+          <span>Can I extend my rental while on the road?</span>
+          <span class="faq-icon text-lg text-brand-600 font-mono transition-transform">+</span>
+        </button>
+        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
+          Yes! You can extend your trip with a single tap inside your "My Trips" portal, provided the vehicle does not have an overlapping reservation immediately following your return window.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 rounded-xl bg-brand-500 flex items-center justify-center text-white font-black text-sm">D</div>
+          <span class="text-lg font-extrabold text-white">Drive<span class="text-brand-400">Go</span></span>
+        </div>
+        <p class="leading-relaxed">Full-stack modern car rental application. Zero-dependency native Node.js backend with advanced Tailwind CSS.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Popular Hubs</h4>
+        <ul class="space-y-1.5">
+          <li>Indira Gandhi Int. Airport (Terminal 3)</li>
+          <li>City Center Downtown Hub (MG Road)</li>
+          <li>Central Railway Station</li>
+          <li>Cyber City Tech Park Hub</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Active Promo Codes</h4>
+        <ul class="space-y-1.5 font-mono">
+          <li><span class="text-brand-300 font-bold">DRIVE20</span> - 20% off up to ₹3,500</li>
+          <li><span class="text-brand-300 font-bold">FIRST10</span> - 10% off first drive</li>
+          <li><span class="text-brand-300 font-bold">WEEKEND15</span> - 15% weekend discount</li>
+          <li><span class="text-brand-300 font-bold">VIP500</span> - Flat ₹500 off</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Demo Logins</h4>
+        <p class="mb-1 text-white font-semibold">Customer: customer@drivego.com / drive123</p>
+        <p class="mb-3 text-white font-semibold">Admin: admin@drivego.com / admin123</p>
+        <p class="text-[10px] text-slate-500">24/7 Concierge Hotline: 1800-419-7000</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-center text-slate-500">
+      <p>© <span id="currentYear">2026</span> DriveGo Mobility App. Built with Tailwind CSS, HTML5, Vanilla JavaScript, and Node.js.</p>
+      <p>Clean REST API · Zero External Dependencies</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. VEHICLE SPECS QUICK VIEW MODAL -->
+  <div id="quickViewModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-3xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- 2. BOOKING MODAL -->
+  <div id="bookingModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div id="bookingModalHeader" class="relative p-6 bg-gradient-to-r from-brand-600 to-indigo-700 text-white"></div>
+      
+      <div class="p-6 space-y-6">
+        <!-- Dates & Location -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Pickup Date</label>
+            <input type="date" id="bookModalStart" class="w-full px-3 py-2 text-xs font-semibold rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Return Date</label>
+            <input type="date" id="bookModalEnd" class="w-full px-3 py-2 text-xs font-semibold rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-slate-400 mb-1">Pickup Location</label>
+            <select id="bookModalLocation" class="w-full px-3 py-2 text-xs font-semibold rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"></select>
+          </div>
+        </div>
+
+        <!-- Add-Ons -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Protection &amp; Equipment Add-Ons</label>
+          <div id="bookModalExtras" class="grid sm:grid-cols-2 gap-2.5"></div>
+        </div>
+
+        <!-- Promo Code Input -->
+        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex gap-2 items-center">
+          <input type="text" id="couponInput" placeholder="Promo code (e.g. DRIVE20, FIRST10)" class="flex-1 uppercase font-mono px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:outline-none" />
+          <button id="applyCouponBtn" type="button" class="px-4 py-2 rounded-xl bg-slate-800 dark:bg-slate-700 text-white font-bold text-xs hover:bg-slate-700 transition">
+            Apply Code
+          </button>
+        </div>
+        <div id="couponStatusMessage" class="hidden text-xs font-medium"></div>
+
+        <!-- Itemized Quote Breakdown -->
+        <div id="modalQuoteBox" class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs space-y-2"></div>
+
+        <!-- Payment Method -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Payment Option</label>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <label class="flex items-center gap-2 p-3 rounded-xl border border-brand-500/50 bg-brand-50/30 dark:bg-brand-950/20 cursor-pointer">
+              <input type="radio" name="paymentChoice" value="Credit Card (•••• 4242)" checked class="accent-brand-600" />
+              <div>
+                <p class="font-bold">Instant Online (UPI / Card)</p>
+                <p class="text-[10px] text-slate-400">Zero extra surcharge</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer">
+              <input type="radio" name="paymentChoice" value="Pay at Pickup Hub" class="accent-brand-600" />
+              <div>
+                <p class="font-bold">Pay at Pickup Hub</p>
+                <p class="text-[10px] text-slate-400">Card or cash on handover</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <p id="bookingErrorText" class="hidden text-xs text-red-600 font-semibold"></p>
+        <div class="flex gap-3 pt-2">
+          <button id="closeBookingBtn" class="flex-1 py-3 rounded-xl font-bold text-xs border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Cancel
+          </button>
+          <button id="submitBookingBtn" class="flex-1 py-3 rounded-xl font-bold text-xs bg-gradient-to-r from-brand-600 via-indigo-600 to-pink-600 text-white shadow-lg shadow-brand-500/25 hover:opacity-95 transition">
+            Confirm &amp; Reserve Ride
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BOARDING PASS / PRINTABLE INVOICE MODAL -->
+  <div id="voucherModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div id="voucherPrintArea" class="p-6 sm:p-8 space-y-6"></div>
+      <div class="p-4 bg-slate-50 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 flex justify-end gap-3">
+        <button id="closeVoucherBtn" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-600">Close</button>
+        <button onclick="window.print()" class="px-5 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white hover:bg-brand-700 shadow flex items-center gap-1.5">
+          <span>🖨️ Print / Save Voucher</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MY TRIPS MODAL -->
+  <div id="myBookingsModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800 mb-6">
+        <div>
+          <h3 class="text-xl font-extrabold">My Trip Bookings</h3>
+          <p class="text-xs text-slate-500">View confirmed reservations, boarding vouchers, and trip status.</p>
+        </div>
+        <button id="closeMyBookingsBtn" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-700 text-lg">✕</button>
+      </div>
+      <div id="myBookingsList" class="space-y-4 max-h-[60vh] overflow-y-auto pr-1"></div>
+    </div>
+  </div>
+
+  <!-- 5. WRITE A REVIEW MODAL -->
+  <div id="reviewModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-6 border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-extrabold">Write a Car Review</h3>
+        <button id="closeReviewModal" class="text-slate-400 hover:text-slate-700 text-lg">✕</button>
+      </div>
+      <form id="reviewForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Select Car Driven</label>
+          <select id="revCarSelect" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"></select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Your Rating</label>
+          <div class="flex gap-2 text-2xl cursor-pointer" id="starRatingSelect">
+            <span data-star="1" class="star-rating-item text-amber-400">★</span>
+            <span data-star="2" class="star-rating-item text-amber-400">★</span>
+            <span data-star="3" class="star-rating-item text-amber-400">★</span>
+            <span data-star="4" class="star-rating-item text-amber-400">★</span>
+            <span data-star="5" class="star-rating-item text-amber-400">★</span>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Your Road Review</label>
+          <textarea id="revComment" rows="3" placeholder="Tell other travelers how the vehicle performed on your trip..." required class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 text-white font-bold text-xs hover:bg-brand-700 shadow">
+          Submit Review
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. AUTHENTICATION (LOGIN / REGISTER) MODAL -->
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md p-4 flex items-center justify-center">
+    <div class="w-full max-w-sm bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-6 border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div class="flex justify-between items-center mb-5">
+        <div>
+          <h3 id="authModalTitle" class="text-xl font-extrabold">Welcome back</h3>
+          <p id="authModalSubtitle" class="text-xs text-slate-400">Sign in to book and manage your trips</p>
+        </div>
+        <button id="closeAuthModal" class="text-slate-400 hover:text-slate-700 text-lg">✕</button>
+      </div>
+
+      <!-- Quick demo accounts shortcut -->
+      <div class="mb-4 p-2.5 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900 text-[11px] text-slate-600 dark:text-slate-300 space-y-1">
+        <p class="font-bold text-brand-600 dark:text-brand-400">⚡ 1-Click Demo Accounts:</p>
+        <div class="flex gap-2">
+          <button type="button" onclick="fillDemoLogin('customer@drivego.com', 'drive123')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-800 font-semibold hover:border-brand-500">Customer Demo</button>
+          <button type="button" onclick="fillDemoLogin('admin@drivego.com', 'admin123')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-800 font-semibold hover:border-brand-500">Admin Portal</button>
+        </div>
+      </div>
+
+      <form id="authForm" class="space-y-3.5">
+        <input id="authName" type="text" placeholder="Full Legal Name" class="hidden w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+        <input id="authEmail" type="email" placeholder="Email Address" required class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+        <input id="authPassword" type="password" placeholder="Password (min 6 characters)" required class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+        <p id="authErrorMsg" class="hidden text-xs text-red-600 font-medium"></p>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition">
+          Continue
+        </button>
+      </form>
+
+      <p class="text-xs text-center mt-4 text-slate-500">
+        <span id="authToggleQuestion">New to DriveGo?</span>
+        <button id="authToggleBtn" class="text-brand-600 dark:text-brand-400 font-bold ml-1 hover:underline">Create an account</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. ADMIN / FLEET MANAGER DASHBOARD MODAL -->
+  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-md overflow-y-auto p-4 flex items-center justify-center">
+    <div class="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 animate-slide-up">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800 mb-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-500 text-xs font-bold uppercase">Fleet Admin</span>
+            <h3 class="text-2xl font-extrabold">DriveGo Fleet Dispatcher</h3>
+          </div>
+          <p class="text-xs text-slate-500 mt-0.5">Real-time revenue, booking dispatch, and vehicle fleet management.</p>
+        </div>
+        <button id="closeAdminModal" class="text-slate-400 hover:text-slate-700 text-xl">✕</button>
+      </div>
+
+      <!-- KPI Stat Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <p class="text-[11px] font-bold text-slate-400 uppercase">Total Revenue</p>
+          <p id="adminRevStat" class="text-xl font-extrabold text-emerald-600 mt-1">₹0</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <p class="text-[11px] font-bold text-slate-400 uppercase">Total Bookings</p>
+          <p id="adminBookingsStat" class="text-xl font-extrabold text-brand-600 mt-1">0</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <p class="text-[11px] font-bold text-slate-400 uppercase">Active Trips</p>
+          <p id="adminActiveStat" class="text-xl font-extrabold text-pink-500 mt-1">0</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <p class="text-[11px] font-bold text-slate-400 uppercase">Fleet Size</p>
+          <p id="adminFleetStat" class="text-xl font-extrabold text-slate-700 dark:text-slate-200 mt-1">0</p>
+        </div>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="flex gap-3 border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
+        <button id="adminTabBookings" class="px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white">All Bookings</button>
+        <button id="adminTabAddCar" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Add Vehicle to Fleet</button>
+      </div>
+
+      <!-- Bookings Management Table -->
+      <div id="adminBookingsView" class="space-y-3 max-h-[50vh] overflow-y-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="text-[10px] font-bold uppercase text-slate-400 border-b border-slate-200 dark:border-slate-800">
+            <tr>
+              <th class="py-2">Ref</th>
+              <th class="py-2">Renter</th>
+              <th class="py-2">Vehicle</th>
+              <th class="py-2">Dates</th>
+              <th class="py-2">Total</th>
+              <th class="py-2">Status</th>
+              <th class="py-2 text-right">Update</th>
+            </tr>
+          </thead>
+          <tbody id="adminBookingsTableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Add Vehicle Form -->
+      <div id="adminAddCarView" class="hidden">
+        <form id="adminAddCarForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Brand (e.g. BMW, Toyota)</label>
+            <input id="addCarBrand" required class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Model Name (e.g. M340i xDrive)</label>
+            <input id="addCarName" required class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Category</label>
+            <select id="addCarType" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <option>Luxury</option><option>SUV</option><option>Sedan</option><option>Electric</option><option>Hatchback</option><option>MPV</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Daily Price (₹ INR)</label>
+            <input type="number" id="addCarPrice" required min="1000" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Transmission</label>
+            <select id="addCarTrans" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <option>Automatic</option><option>Manual</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Fuel Type</label>
+            <select id="addCarFuel" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <option>Petrol</option><option>Diesel</option><option>Electric</option><option>CNG</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Seats</label>
+            <input type="number" id="addCarSeats" value="5" min="2" max="10" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div>
+            <label class="block font-bold text-slate-500 mb-1">Unsplash Photo URL</label>
+            <input id="addCarImage" placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" />
+          </div>
+          <div class="sm:col-span-2">
+            <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition">
+              Add Vehicle to Active Fleet
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATIONS CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-[99] space-y-2 pointer-events-none"></div>
+
+  <!-- JAVASCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>
